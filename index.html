@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Janakalyan Secondary School - Excellence in Education</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .hero-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/477803374_1693826811512424_7043898534517333160_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Ypa9D9ZIwL4Q7kNvwHWpiH-&_nc_oc=Adl_QqUe4TAI1b4w-nJjUHH5GnNFwfBFiy2eM13QebX6hVOM7mjxcVyh3i1rzzkev3wn9aBBLxn3QtjYjNhIebhY&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=suGBo8RBVRUamBq4VeQJhQ&oh=00_AfKcjbu77KSIg1nDcNZRyRNNHWymZaCAraVHP0eRxZkKAw&oe=68460A8C');
+      background-size: cover;
+      background-position: center;
+    }
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .teacher-card:hover {
+      transform: scale(1.03);
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Updated mobile menu styles */
+    #mobile-menu {
+      position: fixed;
+      top: 4rem; /* below navbar */
+      right: 0;
+      height: 100vh;
+      width: 25vw;
+      max-width: 300px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      opacity: 0;
+      z-index: 1000;
+    }
+
+    #mobile-menu.open {
+      transform: translateX(0);
+      opacity: 1;
+      display: flex !important;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+
+  <!-- Navigation -->
+<nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="flex items-center">
+        <img class="h-10 w-auto" src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t1.6435-9/34504486_113111166250671_1575809507898949632_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFJCXW19nKkOVw7fyRE3GQOIZtQLndFN-chm1Aud0U3502N1Q2tHQSt4T9WU28BxrwmcaBgu3pherqOiYIqa6Cv&_nc_ohc=fcDysWZWqqQQ7kNvwHMiBI8&_nc_oc=AdlsA79WFT5bGE4Y1tQUkdUuKWb7VCQ44m3PFMb8KDhB5Bx7pMreO0lYhoHWnrlxHZgW44qWHCBKoOlaFWsETWUa&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=qwdQiioaILdCzkqHK8eqQw&oh=00_AfLeUnAb0Rkzk5miGx_89067mLgpYwuYlewheqZga8-e1g&oe=68679477" alt="School Logo">
+        <span class="ml-2 text-xl font-bold text-indigo-600 dark:text-indigo-300">Janakalyan Secondary School</span>
+      </div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center space-x-8">
+  <a href="#home" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-house"></i> Home
+  </a>
+  <a href="#about" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-info-circle"></i> About
+  </a>
+  <a href="#academics" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-graduation-cap"></i> Academics
+  </a>
+  <a href="#facilities" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-building"></i> Facilities
+  </a>
+  <a href="#gallery" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-image"></i> Gallery
+  </a>
+  <a href="#contact" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-envelope"></i> Contact
+  </a>
+</div>
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-gray-500 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed top-16 right-0 bg-white dark:bg-gray-800 shadow-lg h-[25vh] w-full max-w-xs transform translate-x-full transition-transform duration-300 z-40">
+  <div class="p-4 space-y-4">
+    <a href="#home" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-house"></i> Home
+    </a>
+    <a href="#about" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-info-circle"></i> About
+    </a>
+    <a href="#academics" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-graduation-cap"></i> Academics
+    </a>
+    <a href="#facilities" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-building"></i> Facilities
+    </a>
+    <a href="#gallery" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-image"></i> Gallery
+    </a>
+    <a href="#contact" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-envelope"></i> Contact
+    </a>
+  </div>
+</div>
+
+  </div>
+</nav>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init();
+
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuButton.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('open')) {
+          mobileMenu.classList.remove('open');
+          setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+        } else {
+          mobileMenu.classList.remove('hidden');
+          setTimeout(() => mobileMenu.classList.add('open'), 10);
+        }
+      });
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const href = link.getAttribute('href');
+          const section = document.querySelector(href);
+          if (section) {
+            window.scrollTo({
+              top: section.offsetTop - 70,
+              behavior: 'smooth'
+            });
+          }
+          mobileMenu.classList.remove('open');
+          setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+        });
+      });
+    });
+  </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $("a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          window.location.hash = hash;
+        });
+      }
+    });
+  });
+</script>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-white pt-16">
+        <div class="text-center px-4 max-w-4xl mx-auto fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-pulse">Welcome to Janakalyan Secondary School</h1>
+            <p class="text-xl md:text-2xl mb-8"><u>Dedicated To Excellence </u><br>Nurturing young minds for a brighter future through quality education and holistic development<br></p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105" onclick="scrollToSection('about')"> <a href="#about">Learn More</a></button>
+                <button class="bg-transparent hover:bg-white hover:text-indigo-600 text-white font-bold py-3 px-6 border-2 border-white rounded-lg transition duration-300 transform hover:scale-105" onclick="scrollToSection('contact')"><a href="#contact">Contact Us</a></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">About Our School</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Our History</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">Founded in 1987, Janakalyan Secondary School has been a beacon of quality education in our community. We started with just 50 students and have grown to serve over 1,200 students annually, maintaining our commitment to academic excellence and character development.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Our Mission</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">To provide a nurturing environment that fosters intellectual curiosity, creativity, and ethical values, preparing students to become responsible global citizens and leaders of tomorrow.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-indigo-50 dark:bg-gray-700 p-4 rounded-lg">
+                            <h4 class="text-indigo-600 dark:text-indigo-300 font-bold text-lg">25+</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Years of Excellence</p>
+                        </div>
+                        <div class="bg-indigo-50 dark:bg-gray-700 p-4 rounded-lg">
+                            <h4 class="text-indigo-600 dark:text-indigo-300 font-bold text-lg">50+</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Qualified Teachers</p>
+                        </div>
+                        <div class="bg-indigo-50 dark:bg-gray-700 p-4 rounded-lg">
+                            <h4 class="text-indigo-600 dark:text-indigo-300 font-bold text-lg">1200+</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Students</p>
+                        </div>
+                        <div class="bg-indigo-50 dark:bg-gray-700 p-4 rounded-lg">
+                            <h4 class="text-indigo-600 dark:text-indigo-300 font-bold text-lg">95%</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Pass Rate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/481315763_1708404506721321_7676762859173134392_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=-6to5NGMLIsQ7kNvwHBjQq0&_nc_oc=AdmpPN-AP_21JVMKevVAXGnvD_jYgnTTAZZyKSFjJpQk5xA8tLkXxR8sU2eDytnbhr-22EWw-_P9sRWl5bVwsxvL&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=T3tZD6il_uSqvcrQc9tpnA&oh=00_AfKTMECrPFtnA_CxG4vuIEmEczFYeI3JLYCRdxX5ugYeMQ&oe=6845FBA4" alt="Students in classroom" class="rounded-lg shadow-xl w-full h-auto">
+                    <div class="absolute -bottom-6 -right-6 bg-indigo-600 p-4 rounded-lg shadow-lg hidden md:block">
+                        <h4 class="text-white font-bold text-lg">Since 1987</h4>
+                        <p class="text-indigo-100">Educating leaders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section id="academics" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Our Academic Programs</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">We offer a comprehensive curriculum designed to challenge students and prepare them for higher education and beyond.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="bg-indigo-600 p-6 text-white">
+                        <i class="fas fa-graduation-cap text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">Primary Education</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Our primary program focuses on foundational skills in literacy, numeracy, and social development for grades 1-5.</p>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-indigo-500 mr-2"></i> Interactive learning</li>
+                            <li class="flex items-center"><i class="fas fa-check text-indigo-500 mr-2"></i> Holistic development</li>
+                            <li class="flex items-center"><i class="fas fa-check text-indigo-500 mr-2"></i> Creative expression</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="bg-indigo-600 p-6 text-white">
+                        <i class="fas fa-book-open text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">Secondary Education</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Our secondary program for grades 6-10 emphasizes critical thinking, problem-solving, and subject mastery.</p>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-indigo-500 mr-2"></i> STEM focus</li>
+                            <li class="flex items-center"><i class="fas fa-check text-indigo-500 mr-2"></i> Research projects</li>
+                            <li class="flex items-center"><i class="fas fa-check text-indigo-500 mr-2"></i> Career guidance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="bg-indigo-600 p-6 text-white">
+                        <i class="fas fa-flask text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">Higher Secondary</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Our +2 program soon.</p>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="p-10 text-center">
+                <button onclick="showModal('curriculum-modal')" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">View Curriculum</button>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Our Facilities</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">State-of-the-art facilities designed to enhance learning and development</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/482342823_1713690872859351_1860294853857781596_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFvpdCDJMMGq9MNnLh0AwBh1ciNDWZ7zA_VyI0NZnvMD-TLOYONEWMyQxgzreck3zOGhPMCwIwq5fo7Olnz-ZFj&_nc_ohc=OPa5YDPiB8EQ7kNvwGU6Qhx&_nc_oc=Adl_StFhai7KA2Twp8iLOaBzqXhsrk-fqSxa0H2qfLTdoX2h2fQ9Cw32WVwoOWCDybyZjHZUvR2RPXUe9xVtlfam&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=yF884_ZK7v7c4qI6W90FYw&oh=00_AfLzDCQnrD_o6Yb1aD0cyldCpGrfzeQzs4ZRVcZw1tV1eQ&oe=6846257E" alt="Library" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Modern Library</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Our well-stocked library with over 10,000 books, digital resources, and quiet study spaces.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/500280904_1771673747061063_8960532855936081938_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE0MQVrZMUHu-Ws6W0p6IYvhvSHAB2xe-qG9IcAHbF76iPe_niejEYjwxJnJ-tmHs6Z5TwRshdQOOj68xnwRzHI&_nc_ohc=80o6pC2SB8kQ7kNvwGPKgrc&_nc_oc=Adlbji9fsBPBNdRjy6xfJ-evWwILLc_b7vR-iJghWNCGA4pBnuchd1EcAJl6XtZ_9GH794FKEcfPEcgxo67n-ZHU&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=AMjDaeXQFknoh8d0IwGuTw&oh=00_AfIRiZPguTd_w0D1a-2kQb477NEk3AJK7qY-AiJw0peG7g&oe=6845E88F" alt="Science Lab" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Science Labs</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Fully equipped physics, chemistry, and biology labs for hands-on learning experiences.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/481445161_1710164113212027_5283601174667044537_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=9XlEsrPvCtgQ7kNvwEMn9Or&_nc_oc=AdlWROU1RZmdX8e3-gjhdtaXDb_MglL9W7FnNX7CJyTHXP-mEdu3FQpB7RfetaK-MXgQP-JiN6Okyo-6esnCQKCq&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=g_vE2XADJZ7TchxUDdvNbw&oh=00_AfO5hOBeGkbf3b9cf3SCvFhkcGxP5KF4KtTfot9WInNjhA&oe=684717BE" alt="Computer Lab" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Computer Lab</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Modern computer lab with high-speed internet and the latest software for digital learning.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/482222593_1715118766049895_8207337081491895125_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=GZdwN14clz8Q7kNvwHPYoQO&_nc_oc=AdlUToPjcsyC954B3n-UO_c2lFg2AwRQB6vuGiuE3Yip13lOG5qlpm6qLr7XLvjchr3lixiAIotYolD8r_ZwWZ9O&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=i1nofFOwZ7mNTGibwklsig&oh=00_AfJBZQnjZ9H8Cy1FCFzFz77UP69orqdIAa_HMKmxjvLGXw&oe=68460D94" alt="Sports" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Sports Facilities</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Basketball court, football field, indoor games, and athletics track for physical development.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/482988219_1714788699416235_3196272113803302959_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHVKtHwG8v17tl0Q9PovwGr2-HP1Xz0-E7b4c_VfPT4Tu6SSr6g08pbXSn_L5g4Bt2qnKTdwSvCM7-DoCM0eqV6&_nc_ohc=vdg3zoiTOxQQ7kNvwHgXmrr&_nc_oc=Adn3lRU5T6ANCDVAUdPuyuPAJSnmGPPQP4j42DWYBpwpMW6akT12VVnheRWlDYc3BJxJiUDI-oD_YPfK7EbAlV4H&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=v8b0oyD-VvYShQ-Vfi89dQ&oh=00_AfL5QkkO5nAKKcoeu87IoocqGWGgffotgVJFDHtjRJ-qVA&oe=6845FDFE" alt="Auditorium" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Transportation</h3>
+                        <p class="text-gray-600 dark:text-gray-300">safe, efficient and ensure students travel comfortably and on time.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/481248909_1704563173772121_5395625913637837244_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6uAOcGXk364Q7kNvwG1kFeJ&_nc_oc=AdkdkO-O0G5PYyTgamWDi2THUjR6OirDaJUBF11k6u1u4HJOFq6J35bk_ftlBx97V7zN7gSWdNnuSY8uIiKJCWU7&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=OjCcgldSCfZUflwuGqKNOA&oh=00_AfPiOoaRnsZvptw07RfbPsYZLyzhWQcZu07C0BoLKsLO1Q&oe=68472A2E" alt="Cafeteria" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Temple</h3>
+                        <p class="text-gray-600 dark:text-gray-300">a peaceful temple where students can pray and find moments of quiet reflection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+<section id="gallery" class="py-20 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Gallery</h2>
+      <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+      <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+        Capturing moments of learning, growth, and celebration
+      </p>
+    </div>
+
+    <!-- Image Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Always visible images -->
+      <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+        <img
+          src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t1.6435-9/83566194_498217981073319_4401549774193426432_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH4gMRykyw42gOGyLol4zMGxkoGO0AOypDGSgY7QA7KkMU5C3hZhtnBsyFBcGpgLBcGnyNFx5WPnPFdTVw5uOVL&_nc_ohc=Jm_sWiv4u2oQ7kNvwHQR-Mu&_nc_oc=AdlRaNyCPRNa71Z3UbY-ZAE_sRtCDHOwjojRRrJjfQ4BcYlOenILMuoA5TL210P5XiVTuh3RU439IwvCI2gGcAFB&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=qKVs5LNUXaf4mHfPp2y24A&oh=00_AfK5_OFo_r86OOtDnz4LL1_Pct-p2ajZF5n07nrSBDuXIg&oe=6867B252"
+          alt="School event"
+          class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+        <img
+          src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t1.6435-9/36381992_135665623995225_6818422090350198784_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEg6m_n_12zCwKMgaDbkz8wvA708Ng-LLK8DvTw2D4ssob12T627dOOMtLHMTteEpgeYEgESVfoU0nOxpUUnTDC&_nc_ohc=dUIzWCVznxkQ7kNvwHRcf3h&_nc_oc=Admo7adiIX0K-kPVidi1_GUpDwELy15mRuozYpFapS29g6cGZRpBaNd3fMHLQIkNZ26Ai6iZo8zA_U2vWmE90w-L&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=1dEpEPszTqWBKll26iEPAQ&oh=00_AfLfTWZEWtDAIN7qOAdvE27JEwjubpA-alHi4C-9g0UvGA&oe=68678569"
+          alt="School event"
+          class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+        <img
+          src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/484905790_1717039069191198_8117003508186955957_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEdKgvPwpUwijO2Aa-AtJ82qswF6gQ0Hw2qzAXqBDQfDeQxvAE9hgL4Wd3JSfHc4prHIJd7nALm__BrzyXHJOT2&_nc_ohc=rnLQtz9CpjQQ7kNvwFitgiw&_nc_oc=AdnuvSHkQ_Gm3c3l6ULPjH7JLWbmOUJJJJZiyBM2C5tTSZBm5gk5052FpOfttGayYRLv0W7aK8H77aQq-mGlTzhg&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=duMSR6gwG1BQddWMVk_pAw&oh=00_AfJbaNy1iPS3gCL18mpvgWgXXmJOC-Aj2cy_bmoaF_roLA&oe=684605B6"
+          alt="School event"
+          class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+        <img
+          src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/490449211_1738590120369426_8063756866094344039_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFSOqysaj2MnTdx2GaCuM7et9jYGcMS0yi32NgZwxLTKEvKlebn6PDlFzFtsGu8ylXASn_mJVTgIUJoK7kWIs2i&_nc_ohc=kTmo0MeSCH4Q7kNvwHQcQ5h&_nc_oc=Adl17nGDw3TXqazk9XGBHR7I4aXqmMcuM42dltAv2mGM5Mb8yabN8VHrkcAebZNMz5Td2UYsnFtR6QE5z8d6B7Ro&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=N1P5Rcn2ezoyYFQmG3AKVQ&oh=00_AfLOmV83zDBwPVOZJQ3jcnlRSZ_a7h1aSa1OJdAXQoadCQ&oe=6845D470"
+          alt="School event"
+          class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+
+      <!-- Hidden images -->
+        <div id="moreImages" class="hidden contents">
+        <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+          <img
+            src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/484741515_1717037839191321_5037606930400193010_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH_3AKerWd7ZqEjyvofagGSRslmt4eYqJFGyWa3h5iokbNtzml9U1yzPRjEs7-AgHYhK-IwX1gW17-gBli2jC8K&_nc_ohc=ltyjCDWQCK4Q7kNvwEkfR57&_nc_oc=AdlyAhmpG-CmC-rbNzO_fGpVNjmJwPtpp-FMZszoKheTJmLdlxfh92OwLHBYthaEN1ddEicnwHyFifCT0QEW9GvV&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=XiHjO3N2F5pXhj3z0bzDGg&oh=00_AfIyUeDlsWcc0R82UHMbMlKERSBtQ-IaXjftnmxRT4wNhA&oe=6845EC79"
+            alt="School event"
+            class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+            onclick="openModal(this.src)"
+          />
+        </div>
+              <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+        <img
+          src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/484783631_1716339355927836_8871645777702425316_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFeEd-4amViHHKLXQxXfdwxQC-Gz_0g4FVAL4bP_SDgVcLsQpgLps-YIP5H8-VFaetPksrTnn8K0w6Y_KcuqfD-&_nc_ohc=lJbuWfig0ZYQ7kNvwHIFjxw&_nc_oc=AdnugYS9IKj2aZmI1627yX7UvL1c-2CnU7W0Q4Zeo-MwT6TBMvd5RVgZ1ljUaQBMS8t-qkdywpoe040ulI-R7F7y&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=xxrJx_4PfTdCy_zmA-trUA&oh=00_AfJugtE3Tc6ji_eJBnFlxYa52p8mocOZEK81Xo-x1WJ9Tw&oe=6845E8DF"
+          alt="School event"
+          class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+            <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+        <img
+          src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/484337484_1716339425927829_265763859514892604_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGa35r_AErD-qvsEzmLy5MgAIOAXIMnILYAg4Bcgycgtrj6gfkmGF2KWEoqXuUZAXmKOooTsAz1vGmCw_wrmi35&_nc_ohc=pgKV5nMDs2YQ7kNvwG-oJkJ&_nc_oc=AdkMP2GiQy2OhOeXUbt3iX2C_TUfdSz4SmMWeuB5IHTYXLfqEjzyaG3bgyxW4gA3Iw1n9njBv91iQ15MwYmSamB2&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=8EOOu-IDHG8GUlhD7WfkUQ&oh=00_AfKUjIOJbYbGjP3z-LtRtHT2O_-Plo_7asVzOnMIQa0PIA&oe=6845EF7C"
+          alt="School event"
+          class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+        <img
+          src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/484088961_1715122466049525_8212257585464065118_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGm65P8i_6KAJ2CQ8lXrNCdzLWgF-ZFTczMtaAX5kVNzFv_iraxzGmhqPscC8oz4CdbbwVGL54nf2-kImRmHvcX&_nc_ohc=JaWsjSMU5S8Q7kNvwF4_hRs&_nc_oc=AdmCpkElWJiIF-hG7jODPq7KFl2HUvdiu5QlFiKfbqRJWkXU3BJL0Le53LTXt64C2iAEf3PXeAcq-FnHxz97Z4-w&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=WuT02IpomIBlCOqjUrHiMA&oh=00_AfJbPGJMBUS-tYSVJqYBWebTucS8Q6FdnECTnRo3lPC1Jw&oe=6845F3DF"
+          alt="School event"
+          class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+        <img
+          src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/484446680_1715122489382856_6383742939035114554_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEi3JRCRUqXmwQQx22h1Marr3m8urnFjXyveby6ucWNfMHErdji-j8ARfiJ0eJEdTExBfRlj595cmuqnMU2XoMR&_nc_ohc=eSwG8R95HVAQ7kNvwG8DxTB&_nc_oc=AdmFTkW5hX2l4enfiVsUIpSM47AAFFo7MBz48oVTQreB5V_eB6xho2auCAf1KDMqEJBCs1CXSRRaVhVmww8WbAvX&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=C8vuu6q3cVeekdOv_VAoPw&oh=00_AfISEN6T5xqNw4erDU5H-8f3A7zM1BYyLtPBpriJRyDokQ&oe=6845ECCF"
+          alt="School event"
+          class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+        <img
+          src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/482054471_1715120459383059_8245225926503080039_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGYLfFnW8UkILALksfhCNZ1wPIpeqBBa5zA8il6oEFrnLejC8QyCZ24KrxkjpVItYFKZfL8YeuNfG_1Lwh5lftx&_nc_ohc=Bosh0EC2He4Q7kNvwGNrFaW&_nc_oc=AdmRjRJzqNq1hgh4EJS66VbehEEhxNKhg2_1c2j_L3I_1kbfGK_2NtCc5wiV2JPpumaknql1VUzEBb8XneigY3yH&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=Dm2IXcucVBugVKiBzZWG4g&oh=00_AfLFG3VIXcY6obC06v0ew8lsTqQC-n9wB1CMUT6xzs8rZw&oe=68460A31"
+          alt="School event"
+          class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+        <img
+          src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/482029273_1715118676049904_8508263721360995833_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG2mw2GpOyHptP2uzEqhWgrklpvUMCUOEOSWm9QwJQ4Q6livhJTKMHcXXt1vBZCcgLYlqWwNisOctogX9757L4F&_nc_ohc=J_mc49NT04oQ7kNvwGnbkLG&_nc_oc=Adn1PBsph8WPRnwVwfWai9QnVqKmsjUYuKeKBNMyPL73Rr8f_hjb5R1OhKYFI8XprwAdvWSc7waSCF8A6pJ-i9A8&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=f0pnUMWV_9cLZbRrUjk9Xg&oh=00_AfJDz60Z4pJ6sNj8Db8t46OlGbJW4nhcCyAw1YSQDF-rog&oe=6846063B"
+          alt="School event"
+          class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+            <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+        <img
+          src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/484280543_1715802285981543_2050275905347145080_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH6EP5yvsysRWEy3n4VyYWhyspBzLqaNZ7KykHMupo1noQXLHzGA5d7-4UAggXwcaTnex1caBU9-FA1OasDGotT&_nc_ohc=1HdE6DfQt_8Q7kNvwEqo-vi&_nc_oc=AdkrE8usi_ql95SIeIWz7TRmqtQOa8qKhMHAOowijvdJsrMWa7fD-skifHH9uUsqIJXkAE84nINVlEu4wu7u8H4j&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=WYUOoFe2C65Wq51y3dYc4w&oh=00_AfLYfsWkUPlvwigK43n_jrE9HA4mzKv8QZt3cABtbjBcsw&oe=6845EF8D"
+          alt="School event"
+          class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+        <!-- Add more image blocks here as needed -->
+      </div>
+    </div>
+
+    <!-- Button -->
+<div class="mt-12 text-center">
+  <button
+    id="viewMoreBtn"
+    class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105"
+    onclick="showGalleryModal()"
+  >
+    View More Photos
+  </button>
+
+  <button
+    id="showLessBtn"
+    class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 hidden"
+    onclick="hideGalleryModal()"
+  >
+    Show Less
+  </button>
+</div>
+
+</section>
+
+<!-- Modal -->
+<div
+  id="imageModal"
+  class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden"
+  onclick="closeModal(event)"
+>
+  <div class="bg-blue-500 p-[1.5px] rounded-lg relative">
+    <button
+      class="absolute top-2 right-2 text-white text-2xl font-bold"
+      onclick="closeModal(event)"
+    >
+      &times;
+    </button>
+    <img
+      id="modalImage"
+      src=""
+      alt="Expanded view"
+      class="max-w-full max-h-[80vh] rounded-lg"
+    />
+  </div>
+</div>
+
+<!-- JavaScript -->
+ <script>
+  function openModal(src) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    modalImg.src = src;
+    modal.classList.remove('hidden');
+  }
+
+  function closeModal(event) {
+    const modal = document.getElementById('imageModal');
+    if (event.target.id === 'imageModal' || event.target.tagName === 'BUTTON') {
+      modal.classList.add('hidden');
+    }
+  }
+
+  function showGalleryModal() {
+    document.getElementById('moreImages').classList.remove('hidden');
+    document.getElementById('viewMoreBtn').classList.add('hidden');
+    document.getElementById('showLessBtn').classList.remove('hidden');
+  }
+
+  function hideGalleryModal() {
+    document.getElementById('moreImages').classList.add('hidden');
+    document.getElementById('viewMoreBtn').classList.remove('hidden');
+    document.getElementById('showLessBtn').classList.add('hidden');
+  }
+</script>
+
+
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">What People Say</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/482327304_1712937229601382_7651814869661680974_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=nTQCwJmWQ68Q7kNvwH3yTb8&_nc_oc=Adn03rjdA2SkDsSNmsTYl5S2GbhySnNn_Gf-XYHL0sx4f6-udZqPuZLjnGnPRk6HphmzzudLOgF7zJFwq0RUFkLi&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=VN12U2gakhHAaAUT5r7PxQ&oh=00_AfMHu9JNJw5cCHUE7_bjDgJne4PqykWhChi4MCgjaLrv-g&oe=6846E565" alt="Parent" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800 dark:text-white">Mrs. Sima</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Parent</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic">"Janakalyan has provided my child with an excellent education and a nurturing environment. The teachers are dedicated and the facilities are top-notch."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/484184826_1715122449382860_4635763777496853225_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=lP8hZwEaEykQ7kNvwHyMHcN&_nc_oc=AdkKIbY7RL1eXLRSmnxp6o5MfUf-cMGHt0XsEOsLVOcOUJ1p66UYO3sMbC2TILOH6JY8NCYJL5tMnbXblHTT03gs&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=WQ1UTiOg-I5veElie7fUzA&oh=00_AfPBBV8DxGA8ZP9SN6tmFXWJZz0LO-H1d_-7H6_7-iCsKw&oe=6846FE3D" alt="Alumni" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800 dark:text-white">Roshan Kumar</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Alumni</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic">"The foundation I received at Janakalyan prepared me for success in university and beyond. The teachers truly care about their students' futures."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/487790294_1729645441263894_6142416326929376701_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=LSktR1m3no8Q7kNvwFzzdk7&_nc_oc=AdlMVrqtwQa6WFSbgnjxVwog6r3b0GHCgZmUxcW5LHpbihciYkYQ12QnDn8nDpIIrIcBylbOwiHlCzBwUrcBQpxC&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=labWZXOoUX3V3RpgiJ9_0w&oh=00_AfNpeOBy9XjeBTNfWi-uVVGe0nbheI8v6mF07jMHqEzOXw&oe=6846EAE7" alt="Teacher" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800 dark:text-white">MR. Bishnu</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Teacher</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic">"Teaching at Janakalyan is rewarding because of the bright, motivated students and supportive administration that values quality education."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events Section -->
+    <section class="py-20 bg-indigo-50 dark:bg-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">News & Events</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md news-card transition duration-300">
+                    <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t1.6435-9/159902846_794446801450434_9135449326759464178_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFySwsUnuarFons68Otk9KmH8o3Vn2xn3sfyjdWfbGfe_tAjucCv36Hh_u-L36zKxhTUeybkWK7l3n9JN2ZqHzz&_nc_ohc=HDn1EqilNM4Q7kNvwFhz_y2&_nc_oc=Admm_pQmk5Qn7wRFl0sA_lNlHxwpoD_1U_4uH0tV7qnOUnDG4VJjWWIf1GEFoY-oEnbkP_4Jm38FUECdhDd3yBtR&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=wsaK80UWnq6-NQYZk9KyWA&oh=00_AfJSGr1z9Jpe97ndRSiyHUEXMkXsgYQMbEkgdAuBmQSu2g&oe=6867B12F" alt="Event" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-indigo-600 dark:text-indigo-300 text-sm mb-2">June 15, 2023</div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Annual Sports Day</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Join us for our annual sports day featuring competitions, performances, and fun activities for all students.</p>
+                        <button class="text-indigo-600 dark:text-indigo-300 font-semibold hover:text-indigo-800 dark:hover:text-indigo-200 transition duration-300">Read More</button>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md news-card transition duration-300">
+                    <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t1.6435-9/174240673_815792959315818_6983876443790035487_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFNvznSqL9Ea32Z3cryfOnKbRbZktPkpsFtFtmS0-SmwcbIT4bnsEDfzm2pVQ-49WZc8LWRKDUowALDJYYvU_Dd&_nc_ohc=sggd1bloHDcQ7kNvwFZsJGz&_nc_oc=AdkcOVdgqLU_RgK1ikkH9NDCRhX045yHluFZy5wuFCz2k-0Cmiqn6OfbKA4EGiex8Lel4tmphKEcYMemauWUQMmv&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=SI8FvdQL0Jz5cqZN0m6xqA&oh=00_AfLZHwwFGzUfagkk2BWQ0UE6-rwyBYm05KNsRtupjeDeOQ&oe=68679C92" alt="Event" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-indigo-600 dark:text-indigo-300 text-sm mb-2">July 5, 2023</div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Science Fair Winners</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Congratulations to our students who won awards at the regional science fair with their innovative projects.</p>
+                        <button class="text-indigo-600 dark:text-indigo-300 font-semibold hover:text-indigo-800 dark:hover:text-indigo-200 transition duration-300">Read More</button>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md news-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Event" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-indigo-600 dark:text-indigo-300 text-sm mb-2">August 20, 2023</div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">New Computer Lab</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Our new state-of-the-art computer lab is now open with 50 high-performance computers and new software.</p>
+                        <button class="text-indigo-600 dark:text-indigo-300 font-semibold hover:text-indigo-800 dark:hover:text-indigo-200 transition duration-300">Read More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105" onclick="showNewsModal()">View All News</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Contact Us</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">We'd love to hear from you. Reach out for admissions, questions, or feedback.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Get In Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-indigo-100 dark:bg-indigo-900 p-3 rounded-lg">
+                                <i class="fas fa-map-marker-alt text-indigo-600 dark:text-indigo-300"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800 dark:text-white">Address</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Shuklagandaki-5 Belchautara, Tanahun, Nepal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-indigo-100 dark:bg-indigo-900 p-3 rounded-lg">
+                                <i class="fas fa-phone-alt text-indigo-600 dark:text-indigo-300"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800 dark:text-white">Phone</h4>
+                                <p class="text-gray-600 dark:text-gray-300">+065-570100</p>
+                                <p class="text-gray-600 dark:text-gray-300">+977-9856003255 (Mobile)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-indigo-100 dark:bg-indigo-900 p-3 rounded-lg">
+                                <i class="fas fa-envelope text-indigo-600 dark:text-indigo-300"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800 dark:text-white">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-300">janakalyanschool10@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-indigo-100 dark:bg-indigo-900 p-3 rounded-lg">
+                                <i class="fas fa-clock text-indigo-600 dark:text-indigo-300"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800 dark:text-white">Office Hours</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Sunday-Friday: 9:00 AM - 4:00 PM</p>
+                                <p class="text-gray-600 dark:text-gray-300">Saturday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-lg font-medium text-gray-800 dark:text-white mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/janakalyan.mabi" class="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-indigo-600 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Send Us a Message</h3>
+                        <form id="contactForm" class="space-y-6">
+        <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name</label>
+            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white" required>
+        </div>
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email Address</label>
+            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white" required>
+        </div>
+        <div>
+            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subject</label>
+            <select id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white">
+                <option value="admission">Admission Inquiry</option>
+                <option value="general">General Inquiry</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white" required></textarea>
+        </div>
+        <div>
+            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">Send Message</button>
+        </div>
+    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- WhatsApp Integration Script -->
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value.trim();
+
+        const fullMessage = `Hello, I am ${name}.%0AEmail: ${email} %0ASubject: ${subject}%0AMessage: ${message}`;
+
+        // 🔧 Replace this with your real WhatsApp number (no + or spaces)
+        const whatsappNumber = '+977-9856003255';
+
+        window.open(`https://wa.me/${whatsappNumber}?text=${fullMessage}`, '_blank');
+    });
+</script>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8375.783988557143!2d84.07903248517229!3d28.037207222558184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995bb21fc96d575%3A0x2c1fe53488da0eb7!2sShree%20Jana%20Kalyan%20Secondary%20School!5e0!3m2!1sen!2snp!4v1749075593448!5m2!1sen!2snp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Janakalyan Secondary School</h3>
+                    <p class="text-gray-300">Providing quality education since 1995. Our mission is to empower students with knowledge, skills, and values for a successful future.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition duration-300" onclick="scrollToSection('home')">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition duration-300" onclick="scrollToSection('about')">About Us</a></li>
+                        <li><a href="#academics" class="text-gray-300 hover:text-white transition duration-300" onclick="scrollToSection('academics')">Academics</a></li>
+                        <li><a href="#facilities" class="text-gray-300 hover:text-white transition duration-300" onclick="scrollToSection('facilities')">Facilities</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition duration-300" onclick="scrollToSection('contact')">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Important Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Admission</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Academic Calendar</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">School Policies</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Career Opportunities</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Alumni</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-300 mb-4">Subscribe to our newsletter to receive updates on school news and events.</p>
+                    <form class="flex">
+                        <h1 class="px-4 py-2 rounded-l-lg w-full text-gray-800" style="color:wheat">follow us to facebook </h1>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-300 mb-4 md:mb-0">© 2023 Janakalyan Secondary School. All rights reserved.Designed by: Anish </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="https://www.google.com/maps?ll=28.037342,84.080322&z=15&t=m&hl=en&gl=NP&mapclient=embed&cid=3179511875743911607" class="text-gray-300 hover:text-white transition duration-300">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg hidden transition duration-300 hover:bg-indigo-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Curriculum Modal -->
+  <div id="curriculum-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Full Curriculum Details</h3>
+          <button onclick="hideModal('curriculum-modal')" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+        <div class="space-y-6">
+          <div>
+            <h4 class="text-xl font-semibold text-indigo-600 dark:text-indigo-300 mb-3">Primary Education (Grades 1-5)</h4>
+            <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2">
+              <li>English Language Arts (Reading, Writing, Speaking)</li>
+              <li>Mathematics (Basic Arithmetic, Geometry, Problem Solving)</li>
+              <li>Science (General Science, Environmental Studies)</li>
+              <li>Social Studies (History, Geography, Civics)</li>
+              <li>Nepali Language</li>
+              <li>Computer Basics</li>
+              <li>Art and Music</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-indigo-600 dark:text-indigo-300 mb-3">Secondary Education (Grades 6-10)</h4>
+            <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2">
+              <li>English (Literature, Composition)</li>
+              <li>Mathematics (Algebra, Geometry, Trigonometry)</li>
+              <li>Science (Physics, Chemistry, Biology)</li>
+              <li>Social Studies (History, Geography, Economics)</li>
+              <li>Nepali Language and Literature</li>
+              <li>Computer Science</li>
+              <li>Optional Subjects (Maths, Economics)</li>
+              <li>Extra-Curricular Activities</li>
+            </ul>
+          </div>
+        <div class="mt-8">
+          <button onclick="hideModal('curriculum-modal')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Modal -->
+  <script>
+    function showModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function hideModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+  </script>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Photo Gallery</h3>
+                    <button onclick="hideModal('gallery-modal')" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="School event" class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80" alt="Classroom" class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Sports day" class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Cultural program" class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Science fair" class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Field trip" class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Graduation" class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Art exhibition" class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="School building" class="w-full h-48 object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="showImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <button onclick="hideModal('gallery-modal')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-6xl w-full max-h-[90vh]">
+            <button onclick="hideModal('image-modal')" class="absolute top-4 right-4 text-white text-3xl z-10 hover:text-indigo-300 transition duration-300">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modal-image" src="" alt="" class="w-full h-full object-contain">
+        </div>
+    </div>
+
+    <!-- News Modal -->
+    <div id="news-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">All News & Events</h3>
+                    <button onclick="hideModal('news-modal')" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="space-y-8">
+                    <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                        <div class="text-indigo-600 dark:text-indigo-300 text-sm mb-2">June 15, 2023</div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Annual Sports Day</h3>
+                        <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Sports Day" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Our annual sports day was a grand success with participation from all grades. Students competed in various events including track and field, basketball, and traditional games. The event was inaugurated by our principal, Mr. Sharma, who emphasized the importance of physical fitness along with academic excellence.</p>
+                        <p class="text-gray-600 dark:text-gray-300">The closing ceremony featured prize distribution and cultural performances. Congratulations to all participants and winners!</p>
+                    </div>
+                    <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                        <div class="text-indigo-600 dark:text-indigo-300 text-sm mb-2">July 5, 2023</div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Science Fair Winners</h3>
+                        <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Science Fair" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Our students made us proud at the regional science fair with their innovative projects. The team of Riya Sharma and Amit Kumar won first prize for their project "Solar-Powered Water Purification System" in the Environmental Science category.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Other notable projects included "AI-Based Waste Segregation" by Neha Patel and "Low-Cost Braille Printer" by Arjun Thapa. We congratulate all participants for their hard work and creativity.</p>
+                    </div>
+                    <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                        <div class="text-indigo-600 dark:text-indigo-300 text-sm mb-2">August 20, 2023</div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">New Computer Lab</h3>
+                        <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Computer Lab" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Our new state-of-the-art computer lab is now operational with 50 high-performance computers equipped with the latest software. The lab was inaugurated by the District Education Officer, Mr. Ramesh Poudel.</p>
+                        <p class="text-gray-600 dark:text-gray-300">The lab features dedicated workstations for programming, graphic design, and robotics. We've also introduced new courses in Python programming and AI basics for interested students.</p>
+                    </div>
+                    <div>
+                        <div class="text-indigo-600 dark:text-indigo-300 text-sm mb-2">September 10, 2023</div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Teacher's Day Celebration</h3>
+                        <img src="https://images.unsplash.com/photo-1523240792352-7a4b4d0e9a2a?ixlib=rb-4.0.3&ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Teacher's Day" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <p class="text-gray-600 dark:text-gray-300">Students organized a special program to honor our teachers on Teacher's Day. The event included cultural performances, speeches, and awards for outstanding teachers. Our principal praised the student organizers for their efforts in making the event memorable.</p>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <button onclick="hideModal('news-modal')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        
+        // Back to top button
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            backToTopButton.classList.remove('opacity-0');
+        });
+    } else {
+        backToTopButton.classList.add('opacity-0');
+        backToTopButton.addEventListener('transitionend', () => {
+            if (window.pageYOffset <= 300) {
+                backToTopButton.classList.add('hidden');
+            }
+        }, { once: true });
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+        // Close modals when clicking outside
+        document.addEventListener('click', (e) => {
+            const modals = ['curriculum-modal', 'gallery-modal', 'news-modal', 'image-modal'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (modal && !modal.contains(e.target) && !e.target.closest(`[onclick*="${modalId}"]`)) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+
+        // Newsletter form
+        const newsletterForm = document.querySelector('footer form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for subscribing to our newsletter!');
+                newsletterForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
