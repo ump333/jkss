@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Results with Zoom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .modal-img-container {
+      background: #111;
+      border-radius: 0.5rem;
+      touch-action: none;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+      overflow: hidden;
+      max-width: 90vw;
+      max-height: 90vh;
+      position: relative;
+      /* width and height set dynamically */
+    }
+
+    .modal-img-container.zoomed {
+      overflow: auto;
+      cursor: grab;
+    }
+
+    .modal-img {
+      user-select: none;
+      pointer-events: none;
+      display: block;
+      width: 100%;      /* fill container */
+      height: 100%;     /* fill container */
+      max-width: none;  /* disable CSS max-width */
+      max-height: none; /* disable CSS max-height */
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+  <!-- Main Card -->
+  <div class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md relative z-10">
+    <h1 class="text-2xl font-bold mb-4 text-center">View Student Result</h1>
+
+    <!-- Dropdown -->
+    <div class="relative mb-4">
+      <button id="dropdownButton"
+              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-left flex justify-between items-center">
+        <span id="selectedClass">-- Choose Class --</span>
+        <svg class="w-4 h-4 ml-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <ul id="dropdownList" class="absolute z-20 w-full bg-white border border-gray-300 mt-1 rounded-lg shadow-md hidden max-h-60 overflow-auto">
+        <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer" onclick="selectClass('Class 1')">Class 1</li>
+        <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer" onclick="selectClass('Class 2')">Class 2</li>
+        <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer" onclick="selectClass('Class 3')">Class 3</li>
+        <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer" onclick="selectClass('Class 4')">Class 4</li>
+        <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer" onclick="selectClass('Class 5')">Class 5</li>
+        <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer" onclick="selectClass('Class 6')">Class 6</li>
+        <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer" onclick="selectClass('Class 7')">Class 7</li>
+        <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer" onclick="selectClass('Class 8')">Class 8</li>
+        <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer" onclick="selectClass('Class 9')">Class 9</li>
+        <li class="px-4 py-2 hover:bg-blue-100 cursor-pointer" onclick="selectClass('Class 10')">Class 10</li>
+      </ul>
+    </div>
+
+    <button onclick="showResult()" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+      View Result
+    </button>
+
+    <!-- Result Display -->
+    <div id="resultArea" class="mt-6 hidden p-4 bg-green-100 rounded-lg text-green-800 text-center">
+      <p id="resultText" class="mb-4"></p>
+      <img id="resultImage" src="" alt="Result Photo"
+           class="w-full h-auto max-h-64 object-cover rounded-lg mx-auto shadow-lg border-4 border-white cursor-zoom-in"
+           onclick="openModal()" />
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+    <div class="modal-img-container" id="modalImgContainer">
+      <img id="modalImg" class="modal-img" src="" alt="Zoomed Result" />
+    </div>
+  </div>
+
+<script>
+  const dropdownButton = document.getElementById("dropdownButton");
+  const dropdownList = document.getElementById("dropdownList");
+  const selectedClassSpan = document.getElementById("selectedClass");
+  const resultText = document.getElementById("resultText");
+  const resultImage = document.getElementById("resultImage");
+  const resultArea = document.getElementById("resultArea");
+
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modalImg");
+  const modalImgContainer = document.getElementById("modalImgContainer");
+
+  let selectedClassValue = "";
+  let scale = 1;
+  let lastTouchDistance = null;
+
+  dropdownButton.addEventListener("click", () => {
+    dropdownList.classList.toggle("hidden");
+  });
+
+  function selectClass(className) {
+    selectedClassValue = className;
+    selectedClassSpan.textContent = className;
+    dropdownList.classList.add("hidden");
+  }
+
+  function showResult() {
+    if (!selectedClassValue) {
+      resultArea.classList.remove("hidden");
+      resultArea.classList.replace("bg-green-100", "bg-red-100");
+      resultArea.classList.replace("text-green-800", "text-red-800");
+      resultText.textContent = "Please select a class first.";
+      resultImage.style.display = "none";
+      return;
+    }
+
+    const filename = selectedClassValue.toLowerCase().replace(" ", "") + ".jpg";
+    resultArea.classList.remove("hidden");
+    resultArea.classList.replace("bg-red-100", "bg-green-100");
+    resultArea.classList.replace("text-red-800", "text-green-800");
+    resultText.textContent = `Showing result for ${selectedClassValue}`;
+    resultImage.src = filename;
+    resultImage.style.display = "block";
+  }
+
+  function openModal() {
+    modal.classList.remove("hidden");
+    modalImg.src = resultImage.src;
+    scale = 1;
+    modalImg.style.transform = `scale(${scale})`;
+
+    modalImgContainer.classList.remove("zoomed");
+    modalImgContainer.scrollLeft = 0;
+    modalImgContainer.scrollTop = 0;
+
+    modalImg.onload = () => {
+      // Natural size capped by max allowed
+      const naturalWidth = Math.min(modalImg.naturalWidth, 1414);
+      const naturalHeight = Math.min(modalImg.naturalHeight, 2000);
+
+      // Also limit by viewport size 90%
+      const maxWidth = window.innerWidth * 0.9;
+      const maxHeight = window.innerHeight * 0.9;
+
+      // Calculate display size
+      const widthRatio = maxWidth / naturalWidth;
+      const heightRatio = maxHeight / naturalHeight;
+      const scaleRatio = Math.min(widthRatio, heightRatio, 1);
+
+      const displayWidth = naturalWidth * scaleRatio;
+      const displayHeight = naturalHeight * scaleRatio;
+
+      modalImgContainer.style.width = displayWidth + "px";
+      modalImgContainer.style.height = displayHeight + "px";
+
+      updateScrollVisibility();
+    };
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+  }
+
+  function updateScrollVisibility() {
+    if (scale > 1) {
+      modalImgContainer.classList.add("zoomed");
+    } else {
+      modalImgContainer.classList.remove("zoomed");
+      modalImgContainer.scrollLeft = 0;
+      modalImgContainer.scrollTop = 0;
+    }
+  }
+
+  // Zoom with mouse wheel on desktop
+  modalImgContainer.addEventListener('wheel', e => {
+    e.preventDefault();
+    const delta = -e.deltaY || e.wheelDelta;
+    if(delta > 0) {
+      scale = Math.min(scale + 0.1, 5);
+    } else {
+      scale = Math.max(scale - 0.1, 1);
+    }
+    modalImg.style.transform = `scale(${scale})`;
+    updateScrollVisibility();
+  });
+
+  // Pinch zoom support for mobile
+  modalImgContainer.addEventListener('touchmove', e => {
+    if(e.touches.length === 2) {
+      e.preventDefault();
+
+      const touch1 = e.touches[0];
+      const touch2 = e.touches[1];
+      const currentDistance = Math.hypot(
+        touch2.pageX - touch1.pageX,
+        touch2.pageY - touch1.pageY
+      );
+
+      if(lastTouchDistance !== null) {
+        let diff = currentDistance - lastTouchDistance;
+        scale += diff * 0.005; // sensitivity
+        scale = Math.min(Math.max(scale, 1), 5);
+        modalImg.style.transform = `scale(${scale})`;
+        updateScrollVisibility();
+      }
+      lastTouchDistance = currentDistance;
+    }
+  });
+
+  modalImgContainer.addEventListener('touchend', e => {
+    if(e.touches.length < 2) {
+      lastTouchDistance = null;
+    }
+  });
+
+  // Close modal when clicking outside image
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener("click", function (event) {
+    if (!dropdownButton.contains(event.target) && !dropdownList.contains(event.target)) {
+      dropdownList.classList.add("hidden");
+    }
+  });
+
+</script>
+</body>
+  </html>
