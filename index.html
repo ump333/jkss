@@ -40,10 +40,13 @@
       top: 4rem; /* below navbar */
       right: 0;
       height: 100vh;
-      width: 25vw;
+      width: 35vw;
       max-width: 300px;
       transform: translateX(100%);
-      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      transition:
+        transform 0.35s cubic-bezier(0.4,0,0.2,1),
+        opacity 0.35s cubic-bezier(0.4,0,0.2,1);
+      will-change: transform, opacity;
       opacity: 0;
       z-index: 1000;
     }
@@ -52,6 +55,17 @@
       transform: translateX(0);
       opacity: 1;
       display: flex !important;
+      animation: slideInMenu 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    @keyframes slideInMenu {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
   </style>
 </head>
@@ -182,6 +196,7 @@
             <div class="flex flex-wrap justify-center gap-4">
                 <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105" onclick="scrollToSection('about')"> <a href="#about">Learn More</a></button>
                 <button class="bg-transparent hover:bg-white hover:text-indigo-600 text-white font-bold py-3 px-6 border-2 border-white rounded-lg transition duration-300 transform hover:scale-105" onclick="scrollToSection('contact')"><a href="#contact">Contact Us</a></button>
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105" onclick="scrollToSection('about')"> <a href="result.html">View Result</a></button>
             </div>
         </div>
     </section>
@@ -632,7 +647,7 @@
                 </div>
             </div>
             <div class="mt-12 text-center">
-                <a herf="Result.html"><button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">View Results</button></a>
+                <a href="result.html"><button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">View Results</button></a>
             </div>
         </div>
     </section>
