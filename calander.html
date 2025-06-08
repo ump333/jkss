@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Janakalyan Secondary School - Excellence in Education</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .hero-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/477803374_1693826811512424_7043898534517333160_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Ypa9D9ZIwL4Q7kNvwHWpiH-&_nc_oc=Adl_QqUe4TAI1b4w-nJjUHH5GnNFwfBFiy2eM13QebX6hVOM7mjxcVyh3i1rzzkev3wn9aBBLxn3QtjYjNhIebhY&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=suGBo8RBVRUamBq4VeQJhQ&oh=00_AfKcjbu77KSIg1nDcNZRyRNNHWymZaCAraVHP0eRxZkKAw&oe=68460A8C');
+      background-size: cover;
+      background-position: center;
+    }
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .teacher-card:hover {
+      transform: scale(1.03);
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Updated mobile menu styles */
+    #mobile-menu {
+      position: fixed;
+      top: 4rem; /* below navbar */
+      right: 0;
+      height: 100vh;
+      width: 35vw;
+      max-width: 300px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      opacity: 0;
+      z-index: 1000;
+    }
+
+    #mobile-menu.open {
+      transform: translateX(0);
+      opacity: 1;
+      display: flex !important;
+    }
+
+    /* Add this at the end of your <style> section */
+    #mobile-menu {
+        transition:
+            transform 0.3s cubic-bezier(0.4,0,0.2,1),
+            opacity 0.3s cubic-bezier(0.4,0,0.2,1);
+        will-change: transform, opacity;
+    }
+    #mobile-menu.open {
+        animation: slideInMenu 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    @keyframes slideInMenu {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Base Styles */
+    :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #e74c3c;
+        --accent-color: #3498db;
+        --light-color: #ecf0f1;
+        --dark-color: #2c3e50;
+        --text-color: #333;
+        --text-light: #7f8c8d;
+        --transition: all 0.3s ease;
+        --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --border-radius: 8px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #f9f9f9;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Header Styles */
+    .gallery-header {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://source.unsplash.com/random/1600x800/?gallery,art');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 6rem 1rem;
+        position: relative;
+    }
+
+    .header-content {
+        max-width: 800px;
+        margin: 0 auto;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .gallery-header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .gallery-header p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .search-bar {
+        display: flex;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .search-bar input {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border: none;
+        border-radius: var(--border-radius) 0 0 var(--border-radius);
+        font-size: 1rem;
+    }
+
+    .search-bar button {
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 0 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .search-bar button:hover {
+        background-color: #c0392b;
+    }
+
+    /* Navigation */
+    .gallery-nav {
+        background-color: white;
+        box-shadow: var(--box-shadow);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .gallery-nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 1rem 0;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .gallery-nav li {
+        margin: 0 1rem;
+    }
+
+    .gallery-nav a {
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        transition: var(--transition);
+        border-radius: var(--border-radius);
+    }
+
+    .gallery-nav a:hover, .gallery-nav a.active {
+        color: var(--secondary-color);
+        background-color: rgba(231, 76, 60, 0.1);
+    }
+
+    /* Main Content */
+    .gallery-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .filter-options {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1.5rem;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 2rem;
+        cursor: pointer;
+        transition: var(--transition);
+        font-weight: 500;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+        background-color: var(--secondary-color);
+        color: white;
+        border-color: var(--secondary-color);
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .gallery-item {
+        position: relative;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        aspect-ratio: 1/1;
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+
+    .item-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: white;
+        padding: 1.5rem 1rem 1rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: var(--transition);
+    }
+
+    .gallery-item:hover .item-overlay {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .item-overlay h3 {
+        margin-bottom: 0.3rem;
+        font-size: 1.2rem;
+    }
+
+    .item-overlay p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-bottom: 1rem;
+    }
+
+    .view-btn {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        font-weight: 500;
+        transition: var(--transition);
+    }
+
+    .view-btn:hover {
+        background-color: #2980b9;
+    }
+
+    /* Footer */
+    .gallery-footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 3rem 1rem 1rem;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    .footer-section h3::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--secondary-color);
+    }
+
+    .footer-section p {
+        opacity: 0.8;
+        margin-bottom: 1rem;
+    }
+
+    .footer-section ul {
+        list-style: none;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a {
+        transition: var(--transition);
+        opacity: 0.8;
+    }
+
+    .footer-section ul li a:hover {
+        opacity: 1;
+        color: var(--secondary-color);
+        padding-left: 5px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+        opacity: 0.7;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .gallery-header h1 {
+            font-size: 2.5rem;
+        }
+        
+        .gallery-nav ul {
+            flex-wrap: wrap;
+        }
+        
+        .gallery-nav li {
+            margin: 0.3rem;
+        }
+        
+        .gallery-grid {
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery-header {
+            padding: 4rem 1rem;
+        }
+        
+        .gallery-header h1 {
+            font-size: 2rem;
+        }
+        
+        .gallery-header p {
+            font-size: 1rem;
+        }
+        
+        .filter-options {
+            justify-content: flex-start;
+        }
+        
+        .footer-content {
+            grid-template-columns: 1fr;
+        }
+
+        .item-overlay {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            pointer-events: none; /* Prevent overlay from blocking image clicks */
+        }
+    }
+
+    /* Add this CSS at the end of your <style> section */
+    #imageModal {
+        overflow: hidden;
+    }
+    #modalImg {
+        cursor: grab;
+        /* Enable smooth movement */
+        transition: transform 0.2s;
+        /* Remove margin:auto for free movement */
+        margin: 0;
+        /* Prevent image selection while dragging */
+        user-select: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+
+  <!-- Navigation -->
+<nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="flex items-center">
+        <img class="h-10 w-auto" src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t1.6435-9/34504486_113111166250671_1575809507898949632_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFJCXW19nKkOVw7fyRE3GQOIZtQLndFN-chm1Aud0U3502N1Q2tHQSt4T9WU28BxrwmcaBgu3pherqOiYIqa6Cv&_nc_ohc=fcDysWZWqqQQ7kNvwHMiBI8&_nc_oc=AdlsA79WFT5bGE4Y1tQUkdUuKWb7VCQ44m3PFMb8KDhB5Bx7pMreO0lYhoHWnrlxHZgW44qWHCBKoOlaFWsETWUa&_nc_zt=23&_nc_ht=scontent.fpkr1-1.fna&_nc_gid=qwdQiioaILdCzkqHK8eqQw&oh=00_AfLeUnAb0Rkzk5miGx_89067mLgpYwuYlewheqZga8-e1g&oe=68679477" alt="School Logo">
+        <span class="ml-2 text-xl font-bold text-indigo-600 dark:text-indigo-300">Janakalyan Secondary School</span>
+      </div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center space-x-8">
+  <a href="https://janakalyan.netlify.app/#home" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-house"></i> Home
+  </a>
+  <a href="https://janakalyan.netlify.app/#about" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-info-circle"></i> About
+  </a>
+  <a href="https://janakalyan.netlify.app/#academics" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-graduation-cap"></i> Academics
+  </a>
+  <a href="https://janakalyan.netlify.app/#facilities" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-building"></i> Facilities
+  </a>
+  <a href="https://janakalyan.netlify.app/#gallery" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-image"></i> Gallery
+  </a>
+  <a href="https://janakalyan.netlify.app/#contact" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 px-3 py-2 text-sm font-medium nav-link">
+    <i class="fas fa-envelope"></i> Contact
+  </a>
+</div>
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-gray-500 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed top-16 right-0 bg-white dark:bg-gray-800 shadow-lg h-[25vh] w-full max-w-xs transform translate-x-full transition-transform duration-300 z-40">
+  <div class="p-4 space-y-4">
+    <a href="https://janakalyan.netlify.app/" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-house"></i> Home
+    </a>
+    <a href="https://janakalyan.netlify.app/#about" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-info-circle"></i> About
+    </a>
+    <a href="https://janakalyan.netlify.app/#academics" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-graduation-cap"></i> Academics
+    </a>
+    <a href="https://janakalyan.netlify.app/#facilities" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-building"></i> Facilities
+    </a>
+    <a href="https://janakalyan.netlify.app/#gallery" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-image"></i> Gallery
+    </a>
+    <a href="https://janakalyan.netlify.app/#contact" class="flex items-center gap-2 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 nav-link">
+      <i class="fas fa-envelope"></i> Contact
+    </a>
+  </div>
+</div>
+
+  </div>
+</nav>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Header Styles */
+        .gallery-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://source.unsplash.com/random/1600x800/?gallery,art');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 1rem;
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .gallery-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-header p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-bar button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Navigation */
+        .gallery-nav {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .gallery-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-nav li {
+            margin: 0 1rem;
+        }
+
+        .gallery-nav a {
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            transition: var(--transition);
+            border-radius: var(--border-radius);
+        }
+
+        .gallery-nav a:hover, .gallery-nav a.active {
+            color: var(--secondary-color);
+            background-color: rgba(231, 76, 60, 0.1);
+        }
+
+        /* Main Content */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .filter-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 1.5rem 1rem 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .item-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .item-overlay h3 {
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+
+        .item-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .view-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .view-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        .gallery-footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 1rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-section p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            transition: var(--transition);
+            opacity: 0.8;
+        }
+
+        .footer-section ul li a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .gallery-nav ul {
+                flex-wrap: wrap;
+            }
+            
+            .gallery-nav li {
+                margin: 0.3rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-header {
+                padding: 4rem 1rem;
+            }
+            
+            .gallery-header h1 {
+                font-size: 2rem;
+            }
+            
+            .gallery-header p {
+                font-size: 1rem;
+            }
+            
+            .filter-options {
+                justify-content: flex-start;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .item-overlay {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+                background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+                pointer-events: none; /* Prevent overlay from blocking image clicks */
+            }
+        }
+
+        /* Add this CSS at the end of your <style> section */
+        #imageModal {
+            overflow: hidden;
+        }
+        #modalImg {
+            cursor: grab;
+            /* Enable smooth movement */
+            transition: transform 0.2s;
+            /* Remove margin:auto for free movement */
+            margin: 0;
+            /* Prevent image selection while dragging */
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="gallery-header">
+        <div class="header-content">
+            <h1>Academic Calendar</h1>
+            <p>Janakalyan Secondary School </p>
+        </div>
+    </header>
+
+
+
+
+        <div class="gallery-grid">
+            <!-- Gallery items will be added here -->
+            <div class="gallery-item painting">
+                <img src="calander/1.png" alt="class 1 result">
+                <div class="item-overlay">
+                    <h3>Baisakh</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item photography">
+                <img src="calander/2.png" alt="class 2 result">
+                <div class="item-overlay">
+                    <h3>jeth/h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item sculpture">
+                <img src="calander/3.png.jpg" alt="class 3 result">
+                <div class="item-overlay">
+                    <h3>Asar</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item digital">
+                <img src="calander/4.png" alt="class 4 result">
+                <div class="item-overlay">
+                    <h3>Shrawn</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item painting">
+                <img src="calander/5.png" alt="class 5 result">
+                <div class="item-overlay">
+                    <h3>Vhadau</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item photography">
+                <img src="calander/6.png" alt="class 6 result">
+                <div class="item-overlay">
+                    <h3>Ashoj</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item sculpture">
+                <img src="calander/7.png" alt="class 7 result">
+                <div class="item-overlay">
+                    <h3>Kartik</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item digital">
+                <img src="calander/8.png" alt="class 8 result">
+                <div class="item-overlay">
+                    <h3>Mangsir</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item digital">
+                <img src="calander/9.png" alt="class 9 result">
+                <div class="item-overlay">
+                    <h3>Push</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item digital">
+                <img src="calander/10.png" alt="class 10 result">
+                <div class="item-overlay">
+                    <h3>Magh</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item digital">
+                <img src="calander/11.png" alt="class 10 result">
+                <div class="item-overlay">
+                    <h3>Falgun</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item digital">
+                <img src="calander/12.png" alt="class 10 result">
+                <div class="item-overlay">
+                    <h3>Chait</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for viewing images -->
+        <div id="imageModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); align-items:center; justify-content:center;">
+            <span id="closeModal" style="position:absolute;top:20px;right:30px;font-size:2.5rem;color:#fff;cursor:pointer;z-index:10001;">&times;</span>
+            <div style="display:flex;align-items:center;justify-content:center;width:100vw;height:100vh;">
+                <img id="modalImg" src="" alt="Artwork" style="max-width:90vw;max-height:80vh;display:block;margin:auto;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.5);transition:transform 0.2s;">
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.textContent.toLowerCase();
+                    
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Image modal functionality with zoom
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const closeModal = document.getElementById('closeModal');
+            let scale = 1;
+
+            document.querySelectorAll('.gallery-item img').forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function() {
+                    modal.style.display = 'flex';
+                    modalImg.src = this.src;
+                    scale = 1;
+                    modalImg.style.transform = 'scale(1)';
+                });
+            });
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                modalImg.src = '';
+            });
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    modalImg.src = '';
+                }
+            });
+
+            // Zoom feature: mouse wheel or pinch
+            modalImg.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                if (e.deltaY < 0) {
+                    scale += 0.1;
+                } else {
+                    scale = Math.max(1, scale - 0.1);
+                    if (scale === 1) { lastX = 0; lastY = 0; }
+                }
+                modalImg.style.transform = `scale(${scale}) translate(${lastX / scale}px, ${lastY / scale}px)`;
+            });
+
+            // Touch pinch zoom for mobile
+            let lastDist = null;
+            modalImg.addEventListener('touchstart', function(e) {
+                if (e.touches.length === 2) {
+                    lastDist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                }
+            });
+            modalImg.addEventListener('touchmove', function(e) {
+                if (e.touches.length === 2 && lastDist) {
+                    let newDist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                    if (newDist > lastDist) {
+                        scale += 0.03;
+                    } else if (newDist < lastDist) {
+                        scale = Math.max(1, scale - 0.03);
+                    }
+                    modalImg.style.transform = `scale(${scale})`;
+                    lastDist = newDist;
+                }
+            });
+            modalImg.addEventListener('touchend', function(e) {
+                if (e.touches.length < 2) lastDist = null;
+            });
+
+            // Add panning (drag to move) for the zoomed image
+            let isDragging = false;
+            let startX, startY, lastX = 0, lastY = 0;
+
+            modalImg.addEventListener('mousedown', function(e) {
+                if (scale === 1) return; // Only allow panning when zoomed
+                isDragging = true;
+                startX = e.clientX - lastX;
+                startY = e.clientY - lastY;
+                modalImg.style.cursor = 'grabbing';
+                // Prevent image dragging ghost
+                e.preventDefault();
+            });
+            modalImg.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                lastX = e.clientX - startX;
+                lastY = e.clientY - startY;
+                modalImg.style.transform = `scale(${scale}) translate(${lastX / scale}px, ${lastY / scale}px)`;
+            });
+            modalImg.addEventListener('mouseup', function() {
+                isDragging = false;
+                modalImg.style.cursor = 'grab';
+            });
+            modalImg.addEventListener('mouseleave', function() {
+                isDragging = false;
+                modalImg.style.cursor = 'grab';
+            });
+
+            // Touch support for panning
+            let isTouchDragging = false, touchStartX = 0, touchStartY = 0, touchLastX = 0, touchLastY = 0;
+            modalImg.addEventListener('touchstart', function(e) {
+                if (e.touches.length === 1 && scale > 1) {
+                    isTouchDragging = true;
+                    touchStartX = e.touches[0].clientX - touchLastX;
+                    touchStartY = e.touches[0].clientY - touchLastY;
+                }
+            });
+            modalImg.addEventListener('touchmove', function(e) {
+                if (isTouchDragging && e.touches.length === 1) {
+                    touchLastX = e.touches[0].clientX - touchStartX;
+                    touchLastY = e.touches[0].clientY - touchStartY;
+                    modalImg.style.transform = `scale(${scale}) translate(${touchLastX / scale}px, ${touchLastY / scale}px)`;
+                }
+            });
+            modalImg.addEventListener('touchend', function(e) {
+                if (e.touches.length === 0) {
+                    isTouchDragging = false;
+                }
+            });
+
+            // Reset pan when closing or opening modal
+            function resetModalTransform() {
+                lastX = 0; lastY = 0; touchLastX = 0; touchLastY = 0;
+                modalImg.style.transform = `scale(1) translate(0,0)`;
+            }
+            closeModal.addEventListener('click', resetModalTransform);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) resetModalTransform();
+            });
+            document.querySelectorAll('.gallery-item img').forEach(img => {
+                img.addEventListener('click', function() {
+                    resetModalTransform();
+                });
+            });
+
+            // Update zoom code to keep pan position
+            modalImg.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                if (e.deltaY < 0) {
+                    scale += 0.1;
+                } else {
+                    scale = Math.max(1, scale - 0.1);
+                    if (scale === 1) { lastX = 0; lastY = 0; }
+                }
+                modalImg.style.transform = `scale(${scale}) translate(${lastX / scale}px, ${lastY / scale}px)`;
+            });
+        });
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // Optional: close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('open');
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>
