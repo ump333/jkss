@@ -857,6 +857,14 @@
             font-size: 0.9rem;
             opacity: 0.7;
         }
+      
+       // Hide nav if clicked outside
+    document.addEventListener('click', (e) => {
+      const isClickInside = mobileNav.contains(e.target) || toggleBtn.contains(e.target);
+      if (!isClickInside) {
+        mobileNav.classList.add('-translate-x-full');
+      }
+    });
 
         /* Animations */
         @keyframes fadeIn {
