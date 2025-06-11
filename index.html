@@ -17,15 +17,10 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        position: relative;
       }
 
       .zoom-in {
         animation: zoomIn 1.2s ease-out forwards;
-      }
-
-      .logo-zoom-out {
-        animation: logoZoomOut 1.2s ease-in-out forwards;
       }
 
       @keyframes zoomIn {
@@ -38,37 +33,16 @@
         }
       }
 
-      @keyframes logoZoomOut {
-        0% {
-          transform: scale(0);
-          opacity: 0;
-        }
-        100% {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-
-      .hidden {
-        display: none;
-      }
-
-      .logo-animated {
-        position: absolute;
-        width: 150px;
-        height: auto;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 50;
+      .logo {
+        max-width: 120px;
+        margin-bottom: 1rem;
       }
     </style>
   </head>
   <body>
-    <!-- Static Top Logo -->
-    <img src="file/jakk-removebg-preview.png" alt="School Logo" class="w-28 mb-4" />
+    <!-- Logo Image -->
+    <img src="file/jakk-removebg-preview.png" alt="School Logo" class="logo" />
 
-    <!-- Main Content -->
     <div id="content" class="text-center transition-all duration-1000">
       <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-md">
         Welcome to<br />JanaKalyan Secondary School
@@ -84,21 +58,13 @@
       </button>
     </div>
 
-    <!-- Centered Logo to animate -->
-    <img id="centerLogo" src="jakk-removebg-preview.png" alt="School Logo Zoom" class="logo-animated hidden" />
-
     <script>
       function enterSite() {
         const content = document.getElementById('content');
-        const centerLogo = document.getElementById('centerLogo');
-
-        content.classList.add('zoom-in');      // Zoom out the content
-        centerLogo.classList.remove('hidden'); // Show logo
-        centerLogo.classList.add('logo-zoom-out'); // Animate logo
-
+        content.classList.add('zoom-in');
         setTimeout(() => {
-          window.location.href = 'file/index.html'; // Redirect after animation
-        }, 1200); // Match the animation duration
+          window.location.href = 'file/index.html'; // Change to your actual target
+        }, 1200); // Wait for zoom animation to finish
       }
     </script>
   </body>
