@@ -1088,6 +1088,13 @@
                     modalImg.src = '';
                 }
             });
+           // Hide nav if clicked outside
+    document.addEventListener('click', (e) => {
+      const isClickInside = mobileNav.contains(e.target) || toggleBtn.contains(e.target);
+      if (!isClickInside) {
+        mobileNav.classList.add('-translate-x-full');
+      }
+    });
 
             // Zoom feature: mouse wheel or pinch
             modalImg.addEventListener('wheel', function(e) {
